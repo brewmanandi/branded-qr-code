@@ -32,7 +32,8 @@
     "demodebug": "babel-node --inspect-brk demos/express/index.js",
     "resize": "babel-node scripts/createResized.js",
     "gaussian": "babel-node scripts/createGaussianBlur.js",
-    "finalize": "babel-node scripts/createLogoForQRCode.js"
+    "finalize": "babel-node scripts/createLogoForQRCode.js",
+    "process-image": "npm run resize && npm run gaussian && npm run finalize"
   },
   "lint-staged": {
     "*.js": [

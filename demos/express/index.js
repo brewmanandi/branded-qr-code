@@ -13,7 +13,11 @@ const port = process.env.PORT || 3000;
 
 // route handler for GET /airbnb?t=ccc
 app.get('/qr/:logo', route({
-  getLogoPath: req => `../images/final/${req.params.logo}-resized.png`,
+  getLogoPath: (req) => {
+    const path = `${__dirname}/../../images/final/${req.params.logo}-resized.png`;
+    console.log(path);
+    return path;
+  },
   getRatio: req => parseFloat(req.query.r, 10) || 2,
 }));
 
